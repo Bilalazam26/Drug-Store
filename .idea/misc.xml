@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/drawable/button_bg.xml" value="0.2585" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/drawable/ic_pharmacy_icon_svgrepo_com.xml" value="0.2585" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/activity_admin.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/activity_home.xml" value="0.1858974358974359" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_admin_home.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_admin_orders.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_admin_profile.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_cart.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_home.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_log_in.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_orders.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_profile.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_search.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_sign_up.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_splash.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/menu/admin_bottom_nav_menu.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/menu/buttom_nav_menu.xml" value="0.2734375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
