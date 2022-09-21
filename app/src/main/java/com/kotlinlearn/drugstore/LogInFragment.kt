@@ -16,7 +16,6 @@ class LogInFragment : Fragment() {
 
     private lateinit var myAuth: FirebaseAuth
     private lateinit var binding: FragmentLogInBinding
-    private var isAdmin:Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,12 +54,7 @@ class LogInFragment : Fragment() {
     fun login(email:String, password:String) {
         myAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
             it?.let {
-                if(binding.adminCheckbox.isChecked) {
-                    startActivity(Intent(context, AdminActivity::class.java))
-
-                } else {
-                    startActivity(Intent(context, HomeActivity::class.java))
-                }
+                startActivity(Intent(context, HomeActivity::class.java))
             }
         }.addOnFailureListener {
             Toast.makeText(context, "${it.toString()}", Toast.LENGTH_SHORT).show()

@@ -39,6 +39,7 @@ class SplashFragment : Fragment() {
             Navigation.findNavController(it).navigate(R.id.action_splashFragment_to_logInFragment)
         }
 
+
     }
 
     companion object {
