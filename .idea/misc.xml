@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.279" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/drawable/button_bg.xml" value="0.2585" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.137" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/drawable/ic_baseline_home_24_green.xml" value="0.137" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/drawable/ic_launcher_background.xml" value="0.279" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/drawable/ic_pharmacy_icon_svgrepo_com.xml" value="0.2585" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/activity_admin.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/activity_home.xml" value="0.264" />
@@ -12,12 +16,14 @@
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_admin_orders.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_admin_profile.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_cart.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_check_out.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_home.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_log_in.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_order.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_orders.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_payment.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_product.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_product.xml" value="0.264" />
+        <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_products.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_profile.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_search.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/blala/AndroidStudioProjects/KotlinLearn/ITI/DrugStore/app/src/main/res/layout/fragment_sign_up.xml" value="0.22826086956521738" />

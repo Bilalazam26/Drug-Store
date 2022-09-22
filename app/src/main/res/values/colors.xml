@@ -9,6 +9,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="head_txt">#FF4D4C4C</color>
-    <color name="txt">#FF4D4C4C</color>
+    <color name="head_txt">#FF2A2A2A</color>
+    <color name="txt">#FF3F3F3F</color>
 </resources>

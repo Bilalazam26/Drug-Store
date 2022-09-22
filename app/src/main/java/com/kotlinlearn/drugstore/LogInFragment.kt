@@ -41,8 +41,8 @@ class LogInFragment : Fragment() {
     private fun initView() {
         binding.loginBtn.setOnClickListener {
 
-            var email = binding.editTextTextEmailAddress.text.toString()
-            var password = binding.editTextTextPassword.text.toString()
+            var email = binding.emailLogin.text.toString()
+            var password = binding.passwordLogin.text.toString()
             login(email, password)
         }
 
