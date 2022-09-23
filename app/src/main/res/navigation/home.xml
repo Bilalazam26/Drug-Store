@@ -38,7 +38,7 @@
         tools:layout="@layout/fragment_orders" />
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.kotlinlearn.drugstore.ProfileFragment"
+        android:name="com.kotlinlearn.drugstore.view.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment

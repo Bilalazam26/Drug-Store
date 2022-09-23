@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
-    tools:context=".ProfileFragment">
+    tools:context=".view.ProfileFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/top_bar"
@@ -47,7 +47,7 @@
 
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/menu_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"

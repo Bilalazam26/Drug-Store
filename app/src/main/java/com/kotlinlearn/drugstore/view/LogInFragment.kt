@@ -1,4 +1,4 @@
-package com.kotlinlearn.drugstore
+package com.kotlinlearn.drugstore.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,16 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
-import com.kotlinlearn.drugstore.databinding.ActivityMainBinding
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.kotlinlearn.drugstore.HomeActivity
 import com.kotlinlearn.drugstore.databinding.FragmentLogInBinding
+import com.kotlinlearn.drugstore.viewModel.AuthenticationViewModel
 
 
 class LogInFragment : Fragment() {
-
-    private lateinit var myAuth: FirebaseAuth
     private lateinit var binding: FragmentLogInBinding
-
+    private lateinit var authenticationViewModel: AuthenticationViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,40 +34,37 @@ class LogInFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initializeFirebaseAuth()
+        authenticationViewModel = ViewModelProvider(this)[AuthenticationViewModel::class.java]
+        authenticationViewModel.userMutableLiveData.observe(viewLifecycleOwner, Observer {
+            if(it != null) {
+                Toast.makeText(context, "User Logged In Successfully", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(context, HomeActivity::class.java))
+            }
+        })
         initView()
     }
 
     private fun initView() {
         binding.loginBtn.setOnClickListener {
 
-            var email = binding.emailLogin.text.toString()
-            var password = binding.passwordLogin.text.toString()
-            login(email, password)
-        }
-
-    }
-
-    private fun initializeFirebaseAuth() {
-        myAuth = FirebaseAuth.getInstance()
-    }
-
-    fun login(email:String, password:String) {
-        if (!(email.isNullOrEmpty() || password.isNullOrEmpty())) {
-            myAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
-                it?.let {
-                    startActivity(Intent(context, HomeActivity::class.java))
-                }
-            }.addOnFailureListener {
-                Toast.makeText(context, "${it.toString()}", Toast.LENGTH_SHORT).show()
+            val email = binding.emailLogin.text.toString()
+            val password = binding.passwordLogin.text.toString()
+            if (!(email.isNullOrEmpty() || password.isNullOrEmpty())) {
+                authenticationViewModel.login(email, password)
+            } else {
+                Toast.makeText(context, "Empty Email or Password is not allowed here", Toast.LENGTH_SHORT).show()
             }
         }
 
     }
 
+
+
+
+
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             LogInFragment().apply {
                 arguments = Bundle().apply {
                 }
