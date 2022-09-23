@@ -51,13 +51,16 @@ class LogInFragment : Fragment() {
     private fun initializeFirebaseAuth() {
         myAuth = FirebaseAuth.getInstance()
     }
+
     fun login(email:String, password:String) {
-        myAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
-            it?.let {
-                startActivity(Intent(context, HomeActivity::class.java))
+        if (!(email.isNullOrEmpty() || password.isNullOrEmpty())) {
+            myAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
+                it?.let {
+                    startActivity(Intent(context, HomeActivity::class.java))
+                }
+            }.addOnFailureListener {
+                Toast.makeText(context, "${it.toString()}", Toast.LENGTH_SHORT).show()
             }
-        }.addOnFailureListener {
-            Toast.makeText(context, "${it.toString()}", Toast.LENGTH_SHORT).show()
         }
 
     }
