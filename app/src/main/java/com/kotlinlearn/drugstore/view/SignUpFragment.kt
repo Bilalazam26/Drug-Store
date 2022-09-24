@@ -39,6 +39,7 @@ class SignUpFragment : Fragment() {
         authenticationViewModel = ViewModelProvider(this)[AuthenticationViewModel::class.java]
         authenticationViewModel.userMutableLiveData.observe(viewLifecycleOwner, Observer {
             if(it != null) {
+
                 Toast.makeText(context, "User Registered Successfully", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(context, MainActivity::class.java))
             }
@@ -50,11 +51,13 @@ class SignUpFragment : Fragment() {
         binding.btnSignUp.setOnClickListener {
             var email:String = binding.rgisterEmail.text.toString()
             var password:String = binding.registerPassword.text.toString()
-            if (!(email.isNullOrEmpty() || password.isNullOrEmpty())) {
-                authenticationViewModel.register(email, password)
-                startActivity(Intent(context, HomeActivity::class.java))
+            val firstName=binding.firstname.editText?.text.toString()
+            val lastName=binding.lastname.editText?.text.toString()
+            if (!(email.isNullOrEmpty() || password.isNullOrEmpty() || firstName.isNullOrEmpty() || lastName.isNullOrEmpty())) {
+                authenticationViewModel.register(email, password, firstName, lastName)
+                //startActivity(Intent(context, HomeActivity::class.java))
             } else {
-                Toast.makeText(context, "Empty Email or Password is not allowed here", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Empty Field is not allowed here", Toast.LENGTH_SHORT).show()
             }
 
         }

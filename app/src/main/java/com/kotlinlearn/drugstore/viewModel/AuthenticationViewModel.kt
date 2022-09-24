@@ -18,8 +18,8 @@ class AuthenticationViewModel(application: Application ) : AndroidViewModel(appl
         this.loggedOutMutableLiveData = authRepository.loggedOutMutableLiveData
     }
 
-    fun register(email:String, password:String) {
-        authRepository.register(email, password)
+    fun register(email:String, password:String, firstName:String, lastName:String) {
+        authRepository.register(email, password, firstName, lastName)
     }
 
     fun login(email:String, password:String) {
