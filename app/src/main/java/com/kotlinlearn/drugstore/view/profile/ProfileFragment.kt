@@ -19,6 +19,7 @@ import com.kotlinlearn.drugstore.R
 import com.kotlinlearn.drugstore.databinding.FragmentProfileBinding
 import com.kotlinlearn.drugstore.model.User
 import com.kotlinlearn.drugstore.view.main.authentication.AuthenticationViewModel
+import com.kotlinlearn.drugstore.view.splash.SplashActivity
 import com.squareup.picasso.Picasso
 
 class ProfileFragment : Fragment() {
@@ -60,7 +61,7 @@ class ProfileFragment : Fragment() {
         // observe for log out
         authenticationViewModel.loggedOutMutableLiveData.observe(viewLifecycleOwner, Observer{
             if (it){
-                startActivity(Intent(context, MainActivity::class.java))
+                startActivity(Intent(context, SplashActivity::class.java))
             }
         })
 
