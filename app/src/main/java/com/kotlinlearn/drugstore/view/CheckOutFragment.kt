@@ -1,10 +1,12 @@
-package com.kotlinlearn.drugstore
+package com.kotlinlearn.drugstore.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.kotlinlearn.drugstore.R
+
 class CheckOutFragment : Fragment() {
 
 

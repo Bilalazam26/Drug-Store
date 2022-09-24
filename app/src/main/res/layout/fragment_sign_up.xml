@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/bg"
-    tools:context=".view.SignUpFragment">
+    tools:context=".view.main.authentication.SignUpFragment">
 
     <TextView
         android:id="@+id/textView4"
@@ -197,7 +197,8 @@
         android:layout_marginTop="32dp"
         android:background="@drawable/button_bg"
         android:text="sign up"
-        android:textSize="24sp"
+        android:textSize="16sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />

@@ -1,16 +1,13 @@
 package com.kotlinlearn.drugstore.repository
 
 import android.app.Application
-import android.content.Intent
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
-import com.kotlinlearn.drugstore.HomeActivity
+import com.kotlinlearn.drugstore.utils.Constants
 import com.kotlinlearn.drugstore.model.User
 
 class AuthRepository(application: Application) {
@@ -18,7 +15,7 @@ class AuthRepository(application: Application) {
     var userMutableLiveData:MutableLiveData<FirebaseUser>
     var loggedOutMutableLiveData:MutableLiveData<Boolean>
     private var myAuth: FirebaseAuth
-    private lateinit var referance: DatabaseReference
+    private var referance: DatabaseReference
 
     init {
         this.application = application
@@ -44,7 +41,7 @@ class AuthRepository(application: Application) {
     fun initializeUserInfo(email : String, password : String, firstName:String, lastName:String) {
         val uid = myAuth.currentUser?.uid as String
         val user= User(firstName,lastName,uid,email,password, phone = "", image = "", address = "")
-        referance.child("User").child(uid).setValue(user).addOnSuccessListener {
+        referance.child(Constants.UserPath).child(uid).setValue(user).addOnSuccessListener {
             Toast.makeText(application,"User Sign Up Successfully", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener{
             Toast.makeText(application,"${it.message}", Toast.LENGTH_SHORT).show()

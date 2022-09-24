@@ -1,4 +1,4 @@
-package com.kotlinlearn.drugstore
+package com.kotlinlearn.drugstore.view.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import com.kotlinlearn.drugstore.R
 import com.kotlinlearn.drugstore.databinding.FragmentSplashBinding
 
 class SplashFragment : Fragment() {

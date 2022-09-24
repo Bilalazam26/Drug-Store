@@ -1,10 +1,10 @@
-package com.kotlinlearn.drugstore
+package com.kotlinlearn.drugstore.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.kotlinlearn.drugstore.R
 import com.kotlinlearn.drugstore.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {

@@ -1,11 +1,14 @@
-package com.kotlinlearn.drugstore
+package com.kotlinlearn.drugstore.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-class ProductsFragment : Fragment() {
+import com.kotlinlearn.drugstore.R
+
+class PaymentFragment : Fragment() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,15 +22,14 @@ class ProductsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_products, container, false)
+        return inflater.inflate(R.layout.fragment_payment, container, false)
     }
 
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ProductsFragment().apply {
+            PaymentFragment().apply {
                 arguments = Bundle().apply {
-
                 }
             }
     }

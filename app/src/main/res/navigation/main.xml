@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.kotlinlearn.drugstore.SplashFragment"
+        android:name="com.kotlinlearn.drugstore.view.main.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/logInFragment"
-        android:name="com.kotlinlearn.drugstore.view.LogInFragment"
+        android:name="com.kotlinlearn.drugstore.view.main.authentication.LogInFragment"
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" />
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.kotlinlearn.drugstore.view.SignUpFragment"
+        android:name="com.kotlinlearn.drugstore.view.main.authentication.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
 </navigation>

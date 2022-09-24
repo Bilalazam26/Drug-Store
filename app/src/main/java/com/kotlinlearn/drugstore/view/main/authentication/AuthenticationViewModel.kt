@@ -1,4 +1,4 @@
-package com.kotlinlearn.drugstore.viewModel
+package com.kotlinlearn.drugstore.view.main.authentication
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

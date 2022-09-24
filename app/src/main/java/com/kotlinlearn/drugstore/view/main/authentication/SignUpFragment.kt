@@ -1,4 +1,4 @@
-package com.kotlinlearn.drugstore.view
+package com.kotlinlearn.drugstore.view.main.authentication
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,10 +9,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.kotlinlearn.drugstore.HomeActivity
-import com.kotlinlearn.drugstore.MainActivity
+import com.kotlinlearn.drugstore.view.main.MainActivity
 import com.kotlinlearn.drugstore.databinding.FragmentSignUpBinding
-import com.kotlinlearn.drugstore.viewModel.AuthenticationViewModel
 
 
 class SignUpFragment : Fragment() {

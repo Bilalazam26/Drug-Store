@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
-    tools:context=".view.ProfileFragment">
+    tools:context=".view.profile.ProfileFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/top_bar"
@@ -63,16 +63,29 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profile_img"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="20dp"
         android:scaleType="centerCrop"
         android:elevation="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top_bar"
-        tools:srcCompat="@tools:sample/avatars"
+        android:src="@drawable/profile"
         app:shapeAppearanceOverlay="@style/Circular"/>
+
+    <TextView
+        android:id="@+id/change_profile_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change Profile Image"
+        app:layout_constraintTop_toBottomOf="@+id/profile_img"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/txt"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/firstname"
@@ -86,10 +99,11 @@
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_img">
+        app:layout_constraintTop_toBottomOf="@+id/change_profile_img">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/profile_fname"
+            android:inputType="textPersonName"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -111,6 +125,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/profile_lname"
+            android:inputType="textPersonName"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -160,13 +175,36 @@
             android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtaddress"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="16dp"
+        android:backgroundTint="#FF00A651"
+        android:hint="Address"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtphone"
+        app:startIconDrawable="@drawable/ic_baseline_location_on_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/profile_address"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
+        android:id="@+id/save_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:background="@drawable/button_bg"
-        app:layout_constraintTop_toBottomOf="@id/txtphone"
+        app:layout_constraintTop_toBottomOf="@id/txtaddress"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="32dp"
         android:textColor="@color/white"
