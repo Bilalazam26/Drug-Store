@@ -36,7 +36,6 @@ class LogInFragment : Fragment() {
         authenticationViewModel = ViewModelProvider(this)[AuthenticationViewModel::class.java]
         authenticationViewModel.userMutableLiveData.observe(viewLifecycleOwner, Observer {
             if(it != null) {
-                Toast.makeText(context, "User Logged In Successfully", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(context, HomeActivity::class.java))
             }
         })
@@ -46,7 +45,7 @@ class LogInFragment : Fragment() {
     private fun initView() {
         binding.loginBtn.setOnClickListener {
 
-            val email = binding.emailLogin.text.toString()
+            val email = binding.emailLogin.text.toString() + "@gmail.com"
             val password = binding.passwordLogin.text.toString()
             if (!(email.isNullOrEmpty() || password.isNullOrEmpty())) {
                 authenticationViewModel.login(email, password)

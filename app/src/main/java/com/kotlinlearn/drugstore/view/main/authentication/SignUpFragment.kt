@@ -47,7 +47,7 @@ class SignUpFragment : Fragment() {
 
     private fun initView() {
         binding.btnSignUp.setOnClickListener {
-            var email:String = binding.rgisterEmail.text.toString()
+            var email:String = binding.rgisterEmail.text.toString() + "@gmail.com"
             var password:String = binding.registerPassword.text.toString()
             val firstName=binding.firstname.editText?.text.toString()
             val lastName=binding.lastname.editText?.text.toString()

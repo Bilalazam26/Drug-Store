@@ -60,7 +60,7 @@ class HomeFragment : Fragment() {
         binding.recycleCategory.adapter = adapter
     }
     private fun addItemCategory(){
-        arr_Category.add(MyCategory(R.drawable.photo_vitamins_minerals, "Vitamins & minerals"))
+        //arr_Category.add(MyCategory(R.drawable.photo_vitamins_minerals, "Vitamins & minerals"))
         arr_Category.add(MyCategory(R.drawable.photo_haircare, "Hair care "))
         arr_Category.add(MyCategory(R.drawable.photo_mom_baby, " Mom & baby"))
         arr_Category.add(MyCategory(R.drawable.photo_skincare, " Skin care"))

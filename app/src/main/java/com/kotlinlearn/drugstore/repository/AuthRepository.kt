@@ -42,7 +42,7 @@ class AuthRepository(application: Application) {
         val uid = myAuth.currentUser?.uid as String
         val user= User(firstName,lastName,uid,email,password, phone = "", image = "", address = "")
         referance.child(Constants.UserPath).child(uid).setValue(user).addOnSuccessListener {
-            Toast.makeText(application,"User Sign Up Successfully", Toast.LENGTH_SHORT).show()
+            Toast.makeText(application,"Signed Up Successfully", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener{
             Toast.makeText(application,"${it.message}", Toast.LENGTH_SHORT).show()
         }
@@ -53,6 +53,7 @@ class AuthRepository(application: Application) {
             myAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
                 it?.let {
                     userMutableLiveData.postValue(myAuth.currentUser)
+                    Toast.makeText(application,"Logged In Successfully", Toast.LENGTH_SHORT).show()
                 }
             }.addOnFailureListener {
                 Toast.makeText(application, "${it.toString()}", Toast.LENGTH_SHORT).show()

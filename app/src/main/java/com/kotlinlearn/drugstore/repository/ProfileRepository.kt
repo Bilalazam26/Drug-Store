@@ -22,7 +22,7 @@ class ProfileRepository {
         reference.child(Constants.UserPath).child(myAuth.currentUser?.uid.toString())
             .addValueEventListener(object :ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    userMutableLiveData.postValue(snapshot.getValue(User::class.java) as User)
+                    userMutableLiveData.postValue(snapshot.getValue(User::class.java))
                 }
 
                 override fun onCancelled(error: DatabaseError) {
