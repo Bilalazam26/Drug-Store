@@ -6,35 +6,25 @@ import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.kotlinlearn.drugstore.R
+import com.kotlinlearn.drugstore.databinding.ProductLayoutBinding
 import com.kotlinlearn.drugstore.model.MyFavoriteItem
+import com.kotlinlearn.drugstore.model.Product
 
-class MyAdapterFavorite(val list_favorite:ArrayList<MyFavoriteItem>):RecyclerView.Adapter<MyAdapterFavorite.myViewHolderfavorite>()  {
-
+class MyAdapterFavorite(val list_favorite:ArrayList<Product>):RecyclerView.Adapter<MyAdapterFavorite.myViewHolderfavorite>()  {
     lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolderfavorite {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.row_my_favorite,parent,false)
+        val binding = ProductLayoutBinding.inflate(LayoutInflater.from(context), parent, false)
         context = parent.context
-        return myViewHolderfavorite(itemView)
+        return myViewHolderfavorite(binding)
     }
 
     override fun onBindViewHolder(holder: myViewHolderfavorite, position: Int) {
         var  current = list_favorite[position]
-        holder.tvName.text =current.name
-        holder.tvDescription.text =current.description
-        holder.imgFavorite.setImageResource(current.img)
 
-        holder.btnRemove.setOnClickListener {
-
-            makeDialog(position)
-
-        }
     }
 
     override fun getItemCount(): Int {
@@ -64,12 +54,12 @@ class MyAdapterFavorite(val list_favorite:ArrayList<MyFavoriteItem>):RecyclerVie
 
 
 
-    class myViewHolderfavorite(itemView : View) : RecyclerView.ViewHolder(itemView)
+    class myViewHolderfavorite(itemView : ProductLayoutBinding) : RecyclerView.ViewHolder(itemView.root)
     {
-        var tvName :TextView = itemView.findViewById(R.id.row_favorite_tv_name)
-        var tvDescription :TextView = itemView.findViewById(R.id.row_favorite_tn_description)
-        var imgFavorite :ImageView = itemView.findViewById(R.id.row_Order_img)
-        var btnRemove :Button = itemView.findViewById(R.id.btn_row_remove_fa)
+        var productImage : ImageView = itemView.productImage
+        var productName : TextView = itemView.productName
+        var productPrice : TextView = itemView.productPrice
+        var isFav : CheckBox = itemView.favouriteChb
 
     }
 

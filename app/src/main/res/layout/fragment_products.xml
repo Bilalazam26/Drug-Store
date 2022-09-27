@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
+    android:background="@color/white"
     tools:context=".view.products.ProductsFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/top_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/bg"
-        android:backgroundTint="@color/bg"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="12dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +92,7 @@
             android:id="@+id/search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/bg" />
+            android:background="@color/white" />
     </androidx.cardview.widget.CardView>
 
     <TextView

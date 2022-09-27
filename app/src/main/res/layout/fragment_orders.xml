@@ -3,31 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
+    android:background="@color/white"
     tools:context=".view.orders.OrdersFragment">
 
     <TextView
+        android:id="@+id/tv_myOrder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:text="My Orders > "
-        android:textSize="25sp"
-        android:textColor="@color/base_color"
-        android:textStyle="bold"
+        android:layout_alignParentTop="true"
         android:layout_margin="10dp"
-        android:id="@+id/tv_myOrder"
+        android:text="My Orders > "
+        android:textColor="@color/base_color"
+        android:textSize="25sp"
+        android:textStyle="bold"
 
         />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reycleOfOrder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tv_myOrder"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="5dp"
-        android:id="@+id/reycleOfOrder"
 
         />
 

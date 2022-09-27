@@ -36,7 +36,12 @@ class LogInFragment : Fragment() {
         authenticationViewModel = ViewModelProvider(this)[AuthenticationViewModel::class.java]
         authenticationViewModel.userMutableLiveData.observe(viewLifecycleOwner, Observer {
             if(it != null) {
+                // show progress
+                progressShow()
+                // hide btn
+                btnHide()
                 startActivity(Intent(context, HomeActivity::class.java))
+                activity?.onBackPressed()
             }
         })
         initView()
@@ -56,7 +61,13 @@ class LogInFragment : Fragment() {
 
     }
 
-
+    // Progress show & hide btn
+    fun progressShow(){
+        binding.progressLogin.visibility =View.VISIBLE
+    }
+    fun btnHide(){
+        binding.loginBtn.visibility = View.GONE
+    }
 
 
 
