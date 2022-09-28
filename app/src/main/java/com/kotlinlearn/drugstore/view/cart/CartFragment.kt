@@ -44,8 +44,8 @@ class CartFragment : Fragment() {
 
         productsViewModel.cartItemsMutableLiveData.observe(viewLifecycleOwner, Observer {
             if (it != null){
-                cartItems.addAll(it)
-                setCartRecycler(it)
+                cartItems = it
+                setCartRecycler(cartItems)
                 //countTotalAmount()
             }
         })

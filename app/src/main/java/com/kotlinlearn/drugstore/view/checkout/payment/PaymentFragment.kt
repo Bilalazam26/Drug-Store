@@ -1,4 +1,4 @@
-package com.kotlinlearn.drugstore.view
+package com.kotlinlearn.drugstore.view.checkout.payment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kotlinlearn.drugstore.R
+import com.kotlinlearn.drugstore.model.Order
 
 class PaymentFragment : Fragment() {
 
@@ -27,10 +28,14 @@ class PaymentFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             PaymentFragment().apply {
                 arguments = Bundle().apply {
                 }
             }
+
+        fun sendOrder(order : Order) {
+
+        }
     }
 }
