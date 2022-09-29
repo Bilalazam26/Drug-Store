@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import com.kotlinlearn.drugstore.R
 import com.kotlinlearn.drugstore.databinding.FragmentProductBinding
 import com.kotlinlearn.drugstore.model.CartItem
@@ -68,6 +69,10 @@ class ProductFragment : Fragment() {
         if (!currentProduct.img.isNullOrEmpty())
             Picasso.get().load(currentProduct.img).into(binding.productImg)
         binding.addToCartBtn.setOnClickListener { addToCart() }
+
+        binding.homeBtn.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_productFragment_to_navigation_home)
+        }
     }
     private fun addToCart() {
         val cartItem = CartItem(currentProduct.pName, count, currentProduct.price, currentProduct.img)

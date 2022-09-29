@@ -80,7 +80,9 @@ class ProductAdapter(private val context: Context?, private val favourite: Favou
     }
 
     fun setData(productsList: MutableList<Product>){
-        this.productsList.addAll(productsList)
+
+        this.productsList = productsList
         notifyDataSetChanged() //to notify adapter that new data change has been happened to adapt it
     }
+
 }

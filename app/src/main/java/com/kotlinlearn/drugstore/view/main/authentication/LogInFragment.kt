@@ -36,10 +36,7 @@ class LogInFragment : Fragment() {
         authenticationViewModel = ViewModelProvider(this)[AuthenticationViewModel::class.java]
         authenticationViewModel.userMutableLiveData.observe(viewLifecycleOwner, Observer {
             if(it != null) {
-                // show progress
-                progressShow()
-                // hide btn
-                btnHide()
+
                 startActivity(Intent(context, HomeActivity::class.java))
                 activity?.onBackPressed()
             }
@@ -53,7 +50,12 @@ class LogInFragment : Fragment() {
             val email = binding.emailLogin.text.toString() + "@gmail.com"
             val password = binding.passwordLogin.text.toString()
             if (!(email.isNullOrEmpty() || password.isNullOrEmpty())) {
+                // show progress
+                progressShow()
+                // hide btn
+                btnHide()
                 authenticationViewModel.login(email, password)
+
             } else {
                 Toast.makeText(context, "Empty Email or Password is not allowed here", Toast.LENGTH_SHORT).show()
             }

@@ -16,13 +16,14 @@ import com.kotlinlearn.drugstore.model.CartItem
 import com.kotlinlearn.drugstore.model.Order
 import com.kotlinlearn.drugstore.utils.Constants
 import com.kotlinlearn.drugstore.view.checkout.payment.PaymentFragment
+import com.kotlinlearn.drugstore.view.orders.OrderViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
 class CheckOutFragment : Fragment() {
     private lateinit var binding : FragmentCheckOutBinding
     private lateinit var order : Order
-    private lateinit var orderViewModel:OrderViewModel
+    private lateinit var orderViewModel: OrderViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         orderViewModel = ViewModelProvider(this)[OrderViewModel::class.java]
@@ -42,6 +43,10 @@ class CheckOutFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.homeBtn.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_checkOutFragment_to_navigation_home)
+        }
 
         binding.confirmBtn.setOnClickListener {
             sendOrder(it)

@@ -7,8 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.denzcoskun.imageslider.models.SlideModel
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
 import com.kotlinlearn.drugstore.R
 import com.kotlinlearn.drugstore.databinding.FragmentHomeBinding
 import com.kotlinlearn.drugstore.model.MyCategory
@@ -23,8 +28,9 @@ class HomeFragment : Fragment() {
     private lateinit var profileViewModel: ProfileViewModel
     lateinit var binding: FragmentHomeBinding
     private lateinit var productsViewModel: ProductsViewModel
-    private var favouritesList:MutableList<Product> = mutableListOf()
     var arr_Category = ArrayList<MyCategory>()
+    var favouritesList = mutableListOf<Product>()
+    lateinit var adapter:ProductAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,51 +52,64 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.photoProfile.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_navigation_home_to_navigation_profile)
+        }
+        binding.homeUserName.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_navigation_home_to_navigation_profile)
+        }
         setObservers()
         initViewCategory()
-        viewFavourites()
-
+        //initFavouriteRecycler(favouritesList)
+        //viewFavourites()
+        //setSlider()
     }
 
     private fun viewFavourites() {
-        productsViewModel.favouritesMutableLiveData.observe(viewLifecycleOwner, Observer{
-            favouritesList.addAll(it)
-            initFavouriteRecycler()
-        })
+        adapter.setData(favouritesList)
     }
+
 
     private fun setObservers() {
         profileViewModel.userMutableLiveData.observe(viewLifecycleOwner, Observer {
             if(it != null){
                 binding.homeUserName.text = "${it.firstName} ${it.lastName}"
-                Picasso.get().load(it.image).into(binding.photoProfile)
+                if (!it.image.isNullOrEmpty()){
+                    Picasso.get().load(it.image).into(binding.photoProfile)
+                }
+
             }
+        })
+
+        productsViewModel.favouritesMutableLiveData.observe(viewLifecycleOwner, Observer{
+            if (it != null) {
+                favouritesList = it
+                //adapter.setData(mutableListOf())
+                initFavouriteRecycler(favouritesList)
+            }
+
         })
     }
 
-    private fun initFavouriteRecycler() {
+    private fun initFavouriteRecycler(favourites :MutableList<Product>) {
         val layoutManager = GridLayoutManager(context, 2)
-        val adapter = ProductAdapter(context, object : Favourite {
+        adapter = ProductAdapter(context, object : Favourite {
             override fun addToFavourites(product: Product) {
                 productsViewModel.addToFavourites(product)
             }
 
             override fun removeFromFavourites(product: Product) {
                 productsViewModel.removeFromFavourites(product)
+                productsViewModel.getFavourites()
+                initFavouriteRecycler(favourites)
             }
 
-        }, favouritesList)
+        }, favourites)
         binding.recycleMyFavorite.layoutManager = layoutManager
         binding.recycleMyFavorite.adapter = adapter
-        adapter.setData(favouritesList)
+        adapter.setData(favourites)
     }
-/*
-    private fun addItemInFavorite(){
-        arr_Favorite.add(MyFavoriteItem(R.drawable.photo_vitamins_minerals,"Product Name","Description Of Product "))
-        arr_Favorite.add(MyFavoriteItem(R.drawable.photo_skincare,"Sponge Bob","pla pla pla pla pla pla  pla pla pla  pla pla pla  pla pla pla "))
-        arr_Favorite.add(MyFavoriteItem(R.drawable.photo_haircare,"Sponge Bob","pla pla pla pla pla pla  pla pla pla  pla pla pla  pla pla pla "))
-    }
-*/
+
     private fun initViewCategory() {
         binding.recycleCategory.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         addItemCategory()
@@ -104,6 +123,28 @@ class HomeFragment : Fragment() {
         arr_Category.add(MyCategory(R.drawable.photo_skincare, "Skin care"))
 
     }
+/*
+    fun setSlider() {
+        var imageList = ArrayList<SlideModel>()
+
+        var sliderPhotoPath: StorageReference = Firebase.storage.reference.child("SliderAds")
+        sliderPhotoPath.child("ads.jpg").downloadUrl.addOnSuccessListener {
+            imageList.add(SlideModel("$it"))
+        }
+        sliderPhotoPath.child("ads2.jpg").downloadUrl.addOnSuccessListener {
+            imageList.add(SlideModel("$it"))
+        }
+        sliderPhotoPath.child("ads3.jpg").downloadUrl.addOnSuccessListener {
+            imageList.add(SlideModel("$it"))
+        }
+        sliderPhotoPath.child("ads4.jpg").downloadUrl.addOnSuccessListener {
+            imageList.add(SlideModel("$it"))
+            binding.sliderAds.setImageList(imageList)
+        }
+
+    }
+
+ */
 
     companion object {
         @JvmStatic

@@ -43,7 +43,7 @@ class ProductsFragment : Fragment() {
         //observe
         productsViewModel.favouritesMutableLiveData.observe(viewLifecycleOwner, Observer {
             if (it != null) {
-                favouritesList.addAll(it)
+                favouritesList = it
             }
         })
         category = staticCategory

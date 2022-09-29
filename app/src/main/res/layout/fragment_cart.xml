@@ -64,7 +64,7 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="785 LE"
+            android:text="0 L.E"
             android:textColor="@color/base_color"
             android:textSize="20sp"
             android:textStyle="bold" />
